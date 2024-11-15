@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   annotations:
     app.dekorate.io/vcs-url: https://github.com/rmortale/dekorate-demo
-    app.dekorate.io/commit-id: 999598eaf7319b2274c6ec81573c445c3f190e6d
+    app.dekorate.io/commit-id: e6164d8902035a7f568151410b58f1cc9487125f
   labels:
     app.kubernetes.io/name: dekorate-demo
     app.kubernetes.io/version: 1.0.0
@@ -19,7 +19,7 @@ spec:
     metadata:
       annotations:
         app.dekorate.io/vcs-url: https://github.com/rmortale/dekorate-demo
-        app.dekorate.io/commit-id: 999598eaf7319b2274c6ec81573c445c3f190e6d
+        app.dekorate.io/commit-id: e6164d8902035a7f568151410b58f1cc9487125f
       labels:
         app.kubernetes.io/version: 1.0.0
         app.kubernetes.io/name: dekorate-demo
@@ -30,7 +30,7 @@ spec:
               valueFrom:
                 fieldRef:
                   fieldPath: metadata.namespace
-          image: ghcr.io/rmortale/dekorate-demo/999598eaf7319b2274c6ec81573c445c3f190e6d
+          image: ghcr.io/rmortale/dekorate-demo/e6164d8902035a7f568151410b58f1cc9487125f
           imagePullPolicy: IfNotPresent
           livenessProbe:
             failureThreshold: 3
@@ -63,7 +63,7 @@ kind: Ingress
 metadata:
   annotations:
     app.dekorate.io/vcs-url: https://github.com/rmortale/dekorate-demo
-    app.dekorate.io/commit-id: 999598eaf7319b2274c6ec81573c445c3f190e6d
+    app.dekorate.io/commit-id: e6164d8902035a7f568151410b58f1cc9487125f
   labels:
     app.kubernetes.io/name: dekorate-demo
     app.kubernetes.io/version: 1.0.0
@@ -86,7 +86,7 @@ kind: Service
 metadata:
   annotations:
     app.dekorate.io/vcs-url: https://github.com/rmortale/dekorate-demo
-    app.dekorate.io/commit-id: 999598eaf7319b2274c6ec81573c445c3f190e6d
+    app.dekorate.io/commit-id: e6164d8902035a7f568151410b58f1cc9487125f
   labels:
     app.kubernetes.io/name: dekorate-demo
     app.kubernetes.io/version: 1.0.0
