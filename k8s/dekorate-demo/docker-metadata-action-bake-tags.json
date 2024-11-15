@@ -3,8 +3,8 @@
     "docker-metadata-action": {
       "tags": [
         "ghcr.io/rmortale/dekorate-demo:main",
-        "ghcr.io/rmortale/dekorate-demo:main-b827f8b",
-        "ghcr.io/rmortale/dekorate-demo:b827f8b2bbf70b2972254d3ca181a50b930e1915"
+        "ghcr.io/rmortale/dekorate-demo:main-1c5bfc3",
+        "ghcr.io/rmortale/dekorate-demo:1c5bfc313c99d1057b5cfedbc42dd69fa00bc53e"
       ],
       "args": {
         "DOCKER_META_IMAGES": "ghcr.io/rmortale/dekorate-demo",
