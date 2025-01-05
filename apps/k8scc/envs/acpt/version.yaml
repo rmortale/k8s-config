@@ -1,0 +1,12 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8scc
+spec:
+  template:
+    spec:
+      containers:
+      - name: k8scc
+        image: ghcr.io/rmortale/kustomize-sample-app:91b5080
+
