@@ -8,5 +8,5 @@ spec:
     spec:
       containers:
       - name: k8scc
-        image: ghcr.io/rmortale/kustomize-sample-app:latest
+        image: ghcr.io/rmortale/kustomize-sample-app:91b5080
 

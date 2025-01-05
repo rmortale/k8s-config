@@ -9,7 +9,7 @@ namePrefix: test-
 configMapGenerator:
   - name: k8scc-cm
     envs:
-      - local.env
+      - env.properties
 
 generatorOptions:
   disableNameSuffixHash: true
