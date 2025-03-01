@@ -1,0 +1,12 @@
+apiVersion: camel.apache.org/v1
+kind: Integration
+metadata:
+  creationTimestamp: null
+  name: artemiskameletxpath
+spec:
+  traits:
+    mount:
+      configs:
+      - configmap:artemis-creds
+      - configmap:workday-config
+status: {}

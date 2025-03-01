@@ -1,0 +1,40 @@
+apiVersion: camel.apache.org/v1
+kind: Integration
+metadata:
+  creationTimestamp: null
+  name: artemiskameletxpath
+spec:
+  flows:
+  - route:
+      from:
+        parameters:
+          brokerURL: '{{artemis_url}}'
+          destinationName: '{{workday_source_queue}}'
+          password: '{{artemis_password}}'
+          username: '{{artemis_user}}'
+        steps:
+        - setHeader:
+            name: CamelAwsS3Key
+            xpath:
+              expression: /company/name
+              resultType: java.lang.String
+        - log:
+            message: ${headers}
+        uri: kamelet:jms-pooled-apache-artemis-source
+  traits:
+    camel:
+      runtimeVersion: 3.15.2
+    container:
+      image: ghcr.io/rmortale/default/camel-k-kit-cv0usrlajhms73df59l0@sha256:abc91f0673108b6012da31af090f5f0c1410c79123260d48c853488d0e8cd091
+    jvm:
+      classpath: dependencies/*:dependencies/app/*:dependencies/lib/boot/*:dependencies/lib/main/*:dependencies/quarkus/*
+    kamelets:
+      list: jms-pooled-apache-artemis-source,sink
+    mount:
+      configs:
+      - configmap:artemis-creds
+      - configmap:workday-config
+    pull-secret:
+      imagePullerDelegation: false
+      secretName: registry
+status: {}
