@@ -17,7 +17,7 @@ spec:
     camel:
       runtimeVersion: 3.15.2
     container:
-      image: ghcr.io/rmortale/camel-k/camel-k-kit-cvldugmk99is73bseng0@sha256:998d69b5bdffbdb8f6d8535363eec1bfa4a79dc1a743dab121beb499158400ea
+      image: ghcr.io/rmortale/camel-k/camel-k-kit-cvlfrfek99is73bsenhg@sha256:dd911a09874af6841e70e1c7e6c6a8469dfcd468af627222e1ef9554c0cbf971
     jvm:
       classpath: dependencies/*:dependencies/app/*:dependencies/lib/boot/*:dependencies/lib/main/*:dependencies/quarkus/*
     pull-secret:
