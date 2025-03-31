@@ -1,7 +1,6 @@
 apiVersion: camel.apache.org/v1
 kind: Integration
 metadata:
-  creationTimestamp: null
   name: artemiskameletxpath
 spec:
   flows:
