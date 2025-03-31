@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: artemis-creds
+data:
+  artemis_url: "artemis-url"
+  artemis_username: "artemis-username"
+  artemis_password: "artemis-password"
+  

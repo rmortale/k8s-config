@@ -35,5 +35,5 @@ spec:
       - configmap:workday-config
     pull-secret:
       imagePullerDelegation: false
-      secretName: registry
+      secretName: registry-secret
 status: {}
