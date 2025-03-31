@@ -1,0 +1,26 @@
+apiVersion: camel.apache.org/v1
+kind: Integration
+metadata:
+  name: timer-log
+spec:
+  flows:
+  - route:
+      from:
+        parameters:
+          period: "1000"
+        steps:
+        - setBody:
+            simple: Hello Camel from ${routeId}
+        - log: ${body}
+        uri: timer:yaml
+  traits:
+    camel:
+      runtimeVersion: 3.15.2
+    container:
+      image: ghcr.io/rmortale/camel-k/camel-k-kit-cvldugmk99is73bseng0@sha256:998d69b5bdffbdb8f6d8535363eec1bfa4a79dc1a743dab121beb499158400ea
+    jvm:
+      classpath: dependencies/*:dependencies/app/*:dependencies/lib/boot/*:dependencies/lib/main/*:dependencies/quarkus/*
+    pull-secret:
+      imagePullerDelegation: false
+      secretName: registry-secret
+status: {}
