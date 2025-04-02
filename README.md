@@ -1,4 +1,4 @@
-# Kubernets config repo using Kustomize
+# Kubernetes config repo using Kustomize
 
 ## Secrets
 This repo uses [git-crypt](https://www.agwa.name/projects/git-crypt/) to encrypt secrets.
