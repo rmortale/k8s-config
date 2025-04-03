@@ -1,0 +1,26 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: file-sender-apps
+  namespace: argocd
+spec:
+  generators:
+    - clusters: { }
+  template:
+    metadata:
+      name: 'file-sender-{{name}}'
+      namespace: argocd
+    spec:
+      project: default
+      sources:
+        - repoURL: https://github.com/rmortale/k8s-config.git
+          targetRevision: main
+          path: apps/file-sender/envs/{{name}}
+      destination:
+        server: '{{server}}'
+        namespace: camel-k
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+       
