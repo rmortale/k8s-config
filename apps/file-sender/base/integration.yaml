@@ -28,7 +28,7 @@ spec:
       list: kafka-not-secured-source,sink
     mount:
       configs:
-      - secret:file-sender
+      - configmap:file-sender
     pull-secret:
       imagePullerDelegation: false
       secretName: registry-secret
