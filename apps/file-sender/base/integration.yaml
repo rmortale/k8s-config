@@ -12,9 +12,18 @@ spec:
           consumerGroup: '{{app.consumerGroup}}'
           topic: '{{app.topicNames}}'
         steps:
-        - setBody:
-            simple: Hello Camel from ${routeId}
-        - log: ${body}
+        - setHeaders:
+            id: extract file names
+            headers:
+              - expression:
+                  jq:
+                    expression: header("kafka.KEY") | split("/")[1:] | join("/")
+                name: CamelAwsS3Key
+              - expression:
+                  jq:
+                    expression: header("kafka.KEY") | split("/")[0]
+                name: CamelAwsS3OverrideBucketName
+        - log: "file: ${header.CamelAwsS3Key} - bucket: ${header.CamelAwsS3OverrideBucketName}"
         uri: kamelet:kafka-not-secured-source
       id: filesender-route
   traits:
