@@ -3,12 +3,9 @@ kind: ConfigMap
 metadata:
   name: file-sender
 data:
-  devt.properties: |+
-    ### local testing values
-    # Kafka
-    app.bootstrapServers=144.24.252.7:9092
-    app.topicNames=minio-events
-    app.consumerGroup=file-sender-group
+  app.bootstrapServers=144.24.252.7:9092
+  app.topicNames=minio-events
+  app.consumerGroup=file-sender-group
 
 
 
