@@ -3,3 +3,4 @@ kind: Kustomization
 resources:
 - integration.yaml
 - cm.yaml
+- secret.yaml
