@@ -3,7 +3,7 @@ kind: ConfigMap
 metadata:
   name: file-sender-cm
 data:
-  application-do-not-commit.properties: |
+  application.properties: |
     ### local testing values
     # Kafka
     app.bootstrapServers=144.24.252.7:9092
