@@ -23,31 +23,23 @@ spec:
             - expression:
                 jq:
                   expression: header("kafka.KEY") | split("/")[0]
-              name: CamelAwsS3BucketName
+              name: CamelAwsS3OverrideBucketName
             id: extract file names
-        - to:
-            id: download from minio
-            uri: aws2-s3://dummybucket
-        - to:
-            id: save to local dir
-            uri: file://{{app.localDir}}
-        - log: 'Saved to: ${header.CamelFileNameProduced}'
+        - log: 'file: ${header.CamelAwsS3Key} - bucket: ${header.CamelAwsS3OverrideBucketName}'
         uri: kamelet:kafka-not-secured-source
       id: filesender-route
   traits:
     camel:
-      runtimeProvider: plain-quarkus
       runtimeVersion: 3.15.2
     container:
-      image: ghcr.io/rmortale/camel-k/camel-k-kit-cvp6bojrpcts73fu0kj0@sha256:f914266b664164d400f9350142316b1dfcab3ddda8ae4242b032934eab3fac3f
+      image: ghcr.io/rmortale/camel-k/camel-k-kit-cvnvo0afki5c73bl2vtg@sha256:64bf97cfb2e355c172463c503ea3b815141f268e511d99a2edc7355aee82db9e
     jvm:
       classpath: dependencies/*:dependencies/app/*:dependencies/lib/boot/*:dependencies/lib/main/*:dependencies/quarkus/*
     kamelets:
       list: kafka-not-secured-source,sink
     mount:
       configs:
-      - secret:file-sender-secret
-      - configmap:file-sender-cm
+      - configmap:file-sender
     pull-secret:
       imagePullerDelegation: false
       secretName: registry-secret
