@@ -27,7 +27,7 @@ spec:
           ref: values
       destination:
         server: '{{server}}'
-        namespace: artemis
+        namespace: artemis-avt
       syncPolicy:
         syncOptions:
           - CreateNamespace=true

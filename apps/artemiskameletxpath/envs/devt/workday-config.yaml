@@ -1,6 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata:
-  name: workday-config
-data:
-  workday_source_queue: "workday-source-queue"

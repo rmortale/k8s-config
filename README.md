@@ -2,7 +2,7 @@
 
 
 ## Secrets 
-Apply necessary secrets before applying the resources like the Docker registry secret named `registry-secret`
+Apply necessary secrets before applying the resources like the Docker registry secret for camel-k named `registry-secret`
 
 ## Install ArgoCD ApplicationSet
 Change to cluster with ArgoCD installation to the argocd namespace. Apply the ApplicationSet.
