@@ -1,10 +1,24 @@
 # Kubernetes config repo using Kustomize
 
-## ArgoCD ApplicationSet
+## Install ArgoCD ApplicationSet
 Change to cluster with ArgoCD installation to the argocd namespace. Apply the ApplicationSet.
 
 ```
 kubectl apply -f  application-set.yaml
+```
+
+## List ApplicationSet's
+Change to cluster with ArgoCD installation to the argocd namespace.
+
+```
+kubectl get applicationset
+```
+
+## Delete ApplicationSet
+Change to cluster with ArgoCD installation to the argocd namespace.
+
+```
+kubectl delete applicationset <name>
 ```
 
 ## Secrets (deprecated)
