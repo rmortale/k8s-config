@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: artemis-avt-apps
+  name: artemis-avt
   namespace: argocd
 spec:
   generators:
@@ -27,7 +27,7 @@ spec:
           ref: values
       destination:
         server: '{{server}}'
-        namespace: artemis-avt
+        namespace: artemis
       syncPolicy:
         syncOptions:
           - CreateNamespace=true
