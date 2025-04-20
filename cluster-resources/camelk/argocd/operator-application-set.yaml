@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: camel-k-apps
+  name: camel-k-operator
   namespace: argocd
 spec:
   generators:
@@ -16,7 +16,7 @@ spec:
     spec:
       project: default
       sources:
-        - chart: camel-k/camel-k
+        - chart: camel-k
           repoURL: https://apache.github.io/camel-k/charts
           targetRevision: 2.6.0
        
