@@ -1,5 +1,4 @@
 resources:
   - itp.yaml
-  - secret.yaml
 
 namespace: camel-k

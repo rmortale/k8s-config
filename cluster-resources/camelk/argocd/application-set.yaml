@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: camel-k-apps
+  namespace: argocd
+spec:
+  generators:
+    - clusters:
+        selector:
+          matchLabels:
+            argocd.argoproj.io/secret-type: cluster
+  template:
+    metadata:
+      name: 'camel-k-{{name}}'
+      namespace: argocd
+    spec:
+      project: default
+      sources:
+        - repoURL: https://github.com/rmortale/k8s-config.git
+          targetRevision: main
+          path: cluster-resources/camelk/envs/{{name}}
+      destination:
+        server: '{{server}}'
+        namespace: camel-k
+      # syncPolicy:
+      #   automated:
+      #     prune: true
+      #     selfHeal: true
+       
