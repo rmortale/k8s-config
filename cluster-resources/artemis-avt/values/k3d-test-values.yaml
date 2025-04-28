@@ -1,0 +1,19 @@
+
+
+#######################
+# Storage Settings   #
+#######################
+persistence:
+  claimName: pvc-activemq-artemis
+  size: 10Gi
+  # StorageClass configuration
+  storageClass:
+    # If create is true, will create a new StorageClass
+    create: false
+    # # Name of the StorageClass to use/create
+    name: "local-path"
+
+config:
+  brokerXml:
+    global-max-size: 500Mb
+    
